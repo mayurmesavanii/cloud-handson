@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Personalized Quote</title>
+
+  <!-- Google Font (Optional: clean and elegant) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+
+  <!-- Link your CSS 
+  <link rel="stylesheet" href="style.css" /> -->
+
+  <style>
+    /* Fullscreen Video Background */
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    /* Content Overlay */
+    .video-overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #ffffff;
+      padding: 20vh 2rem;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .video-overlay h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .video-overlay p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .cta-button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .cta-button:hover {
+      background: linear-gradient(135deg, #a777e3, #6e8efb);
+      transform: scale(1.05);
+    }
+
+    /* Responsive Font Sizes */
+    @media (max-width: 600px) {
+      .video-overlay h1 {
+        font-size: 2rem;
+      }
+
+      .video-overlay p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="assets/bg_vid.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Quote Section -->
+  <div class="video-overlay">
+    <h1>Your Personalized Quote</h1>
+    <p>"The only limit to our realization of tomorrow is our doubts of today."</p>
+    <a href="index.html" class="cta-button">← Back to Home</a>
+  </div>
+
+</body>
+</html>
