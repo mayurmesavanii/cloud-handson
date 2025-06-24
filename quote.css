@@ -1,0 +1,159 @@
+/* quote.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent sideways scrolling only */
+}
+
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.form-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
+  margin: 5vh auto;
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #222;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.radio-group, .quiz-group, .feeling-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-group label,
+.feeling-group label,
+.quiz-group label {
+  background: #e0e0e0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="radio"]:checked + label {
+  background: #0077b6;
+  color: #fff;
+}
+
+.submit-btn {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb);
+  transform: scale(1.03);
+}
+
+.cta-button {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #555;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* Add this at the bottom of quote.css */
+
+/* Scale up and change background/text color on hover */
+.radio-group label:hover,
+.quiz-group label:hover,
+.feeling-group label:hover {
+  transform: scale(1.1);
+  background: #00b4d8;   /* Highlight color */
+  color: #fff;           /* Ensure label text stays readable */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Make sure your labels have a transition */
+.radio-group label,
+.quiz-group label,
+.feeling-group label {
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+}
+
+#quoteCard h2 {
+  margin-bottom: 1rem;
+}
+
+#downloadBtn {
+  margin-top: 1rem;
+}

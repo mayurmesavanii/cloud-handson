@@ -1,3 +1,4 @@
+<!-- quote.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,75 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Personalized Quote</title>
 
-  <!-- Google Font (Optional: clean and elegant) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Link your CSS 
-  <link rel="stylesheet" href="style.css" /> -->
-
-  <style>
-    /* Fullscreen Video Background */
-    #bgVideo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      filter: brightness(0.6);
-    }
-
-    /* Content Overlay */
-    .video-overlay {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: #ffffff;
-      padding: 20vh 2rem;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .video-overlay h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .video-overlay p {
-      font-size: 1.5rem;
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    .cta-button {
-      margin-top: 2rem;
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(135deg, #6e8efb, #a777e3);
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 50px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .cta-button:hover {
-      background: linear-gradient(135deg, #a777e3, #6e8efb);
-      transform: scale(1.05);
-    }
-
-    /* Responsive Font Sizes */
-    @media (max-width: 600px) {
-      .video-overlay h1 {
-        font-size: 2rem;
-      }
-
-      .video-overlay p {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="quote.css">
 </head>
 <body>
 
@@ -83,12 +21,66 @@
     Your browser does not support the video tag.
   </video>
 
-  <!-- Quote Section -->
-  <div class="video-overlay">
-    <h1>Your Personalized Quote</h1>
-    <p>"The only limit to our realization of tomorrow is our doubts of today."</p>
+  <!-- Form Overlay -->
+  <div class="form-container">
+    <h2>Let's Get to Know You!</h2>
+    <form id="quoteForm">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <label>Gender:</label>
+      <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label>
+      </div>
+
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+
+      <label>Pick a personality trait that describes you best:</label>
+      <div class="quiz-group">
+        <input type="radio" id="curious" name="trait" value="Curious">
+        <label for="curious">Curious</label>
+        <input type="radio" id="resilient" name="trait" value="Resilient">
+        <label for="resilient">Resilient</label>
+        <input type="radio" id="dreamer" name="trait" value="Dreamer">
+        <label for="dreamer">Dreamer</label>
+      </div>
+
+      <label>How are you feeling today?</label>
+      <div class="feeling-group">
+        <input type="radio" id="motivated" name="feeling" value="Motivated">
+        <label for="motivated">💪 Motivated</label>
+        <input type="radio" id="tired" name="feeling" value="Tired">
+        <label for="tired">😴 Tired</label>
+        <input type="radio" id="hopeful" name="feeling" value="Hopeful">
+        <label for="hopeful">🌈 Hopeful</label>
+        <input type="radio" id="anxious" name="feeling" value="Anxious">
+        <label for="anxious">😟 Anxious</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Generate My Quote</button>
+    </form>
+    <!-- Quote Popup Modal -->
+<div id="quoteModal" class="modal hidden">
+  <div class="modal-content" id="quoteCard">
+    <h2>Your Custom Quote</h2>
+    <p id="dynamicQuote"></p>
+    <button id="downloadBtn" class="submit-btn">Download as Image</button>
+    <button id="closeModal" class="cta-button">Close</button>
+  </div>
+</div>
+
     <a href="index.html" class="cta-button">← Back to Home</a>
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="quote.js"></script>
 
 </body>
 </html>
