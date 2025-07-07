@@ -327,3 +327,10 @@ body.dark-mode #next-page-cta {
   background: linear-gradient(135deg, #a777e3, #6e8efb);
   transform: scale(1.05);
 }
+
+
+/* Global default — no sticky on mobile */
+.navbar {
+  position: sticky;
+}
+
